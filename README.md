@@ -4,9 +4,8 @@ LSF (Level Set Forecaster) estimates a distribution given only a point estimate 
 
 It roughly works like this:
 1. Track/store historical (pred, target) data.
-2. Given a new prediction, find the nearest pred in historical data.
-3. Form an empirical distribution of targets by collecting the k-nearest historical predictions and their corresponding true targets.
-4. Use the empirical distribution as an uncertainty estimate (calculate quantiles, sample from it, ...).
+2. Given a new prediction, form an empirical distribution of targets by collecting the k-nearest historical predictions and their corresponding true targets.
+3. Use the empirical distribution as an uncertainty estimate (calculate quantiles, sample from it, ...).
 
 This implementation is inspired by Level Set Forecaster [1][2]. Unlike in [1], where bins are expanded only to higher bins, this LSF implementation expands a bin in lower and higher directions, collecting the nearest samples for each expansion bin.
 
